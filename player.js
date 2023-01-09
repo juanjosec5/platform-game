@@ -1,16 +1,9 @@
-export default class Player {
-  constructor(x, y, w, h, color) {
-    this.x = x;
-    this.y = y;
-    this.w = w;
-    this.h = h;
-    this.ys = 0;
-    this.color = color;
-  }
+import Drawable from './drawable.js';
 
-  render(ctx) {
-    ctx.fillStyle = this.color;
-    ctx.fillRect(this.x, this.y, this.w, this.h);
+export default class Player extends Drawable {
+  constructor(x, y, w, h, color) {
+    super(x, y, w, h, color);
+    this.ys = 0;
   }
 
   move(x, y = 0) {
